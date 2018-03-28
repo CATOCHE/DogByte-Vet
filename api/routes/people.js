@@ -1,20 +1,20 @@
 const { getDoc, addDoc } = require('../lib/dal-helper')
-const { getCategories } = require('../dal')
+const { getPeople } = require('../dal')
 const slugify = require('slugify')
 
 module.exports = app => {
-  app.get('/categories', (req, res) => {
-    getCategories({
+  app.get('/people', (req, res) => {
+    getPeople({
       include_docs: true,
-      startkey: 'category_',
-      endkey: 'category_\ufff0'
-    }).then(categories => res.send(categories))
+      startkey: 'person_',
+      endkey: 'person_\ufff0'
+    }).then(people => res.send(people))
   })
-  app.get('/categories/:id', (req, res) => {
+  app.get('/people/:id', (req, res) => {
     getDoc(req.params.id).then(doc => res.send(doc))
   })
-  app.post('/categories', (req, res) => {
-    req.body.type = 'category'
+  app.post('/people', (req, res) => {
+    req.body.type = 'person'
     req.body._id = `${req.body.type}_${slugify(req.body.shortName, {
       lower: true
     })}`
