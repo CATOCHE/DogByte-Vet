@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 const PORT = process.env.PORT || 5000
 const pets = require('./routes/pets')
 const people = require('./routes/people')
+const glossary = require('./routes/glossary')
 
 app.use(bodyParser.json())
 app.use(cors({ credentials: true }))
@@ -16,5 +17,6 @@ app.get('/', (req, res) => {
 
 pets(app)
 people(app)
+glossary(app)
 
 app.listen(PORT, () => console.log('VETERINARY API UP!! on ', PORT))

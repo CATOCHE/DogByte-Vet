@@ -7,11 +7,13 @@ const {
 } = require('./lib/dal-helper')
 const pkGen = require('./lib/pkGen')
 
+const getGlossary = options => allDocs(options || { include_docs: true })
+
+const getPeople = options => allDocs(options || { include_docs: true })
+
 const getPets = options => allDocs(options || { include_docs: true })
 
 const getPet = petId => getDoc(petId)
-
-const getPeople = options => allDocs(options || { include_docs: true })
 
 const addPet = doc => {
   doc.type = 'pet'
@@ -33,7 +35,8 @@ const dal = {
   getPeople,
   addPet,
   deletePet,
-  updatePet
+  updatePet,
+  getGlossary
 }
 
 module.exports = dal

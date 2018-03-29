@@ -7,6 +7,133 @@ const db = new PouchDB(`${process.env.COUCH_URL}${process.env.COUCH_DBNAME}`)
 
 db.bulkDocs([
   {
+    _id: 'term_rabies',
+    type: 'term',
+    entry: 'Rabies',
+    definition:
+      'Of all animal diseases, rabies is probably the most feared. The rabies virus attacks the brain and is always fatal. Most pets are exposed to rabies by bites from wild animals, particularly skunks, raccoons, bats and foxes. The disease can be transmitted to humans through the bite or scratch of an infected pet. Vaccination of all dogs and cats is the most effective means of control.'
+  },
+
+  {
+    _id: 'term_canine-distemper',
+    type: 'term',
+    entry: 'Canine Distemper',
+    definition:
+      'This highly contagious viral disease is found wherever dogs are found. It affects the respiratory and nervous system and is often fatal. Primary vaccination should begin at 6-12 weeks of age since dogs often contract the disease at an early age.'
+  },
+
+  {
+    _id: 'term_canine-parvovirus',
+    type: 'term',
+    entry: 'Canine Parvovirus (CPV)',
+    definition:
+      'This contagious viral disease usually causes severe diarrhea and vomiting in dogs of all ages, but is especially deadly in puppies.'
+  },
+
+  {
+    _id: 'term_canine-coronavirus',
+    type: 'term',
+    entry: 'Canine Coronavirus',
+    definition:
+      'Canine Coronavirus (CCV) is highly contagious and can weaken dogs by causing severe diarrhea and vomiting. The disease is sometimes confused with parvovirus. The two diseases may occur simultaneously, in which case symptoms are more severe.'
+  },
+
+  {
+    _id: 'term_canine-parainfluenza',
+    type: 'term',
+    entry: 'Canine Parainfluenza',
+    definition:
+      'This viral respiratory disease is often partly responsible for "kennel cough" in dogs. Infection can be severe in young puppies. Parainfluenza protection is often included in distemper-parvo vaccines.'
+  },
+
+  {
+    _id: 'term_canine-adenovirus-type-1-and-type-2',
+    type: 'term',
+    entry: 'Canine Adenovirus Type 1 and Type 2',
+    definition:
+      'Canine Adenovirus Type 1 infection causes infectious hepatitis which may lead to severe kidney damage. Type 2 can be a complicating factor in kennel cough. Vaccines are available that protect against both types of adenovirus.'
+  },
+
+  {
+    _id: 'term_canine-leptospirosis',
+    type: 'term',
+    entry: 'Canine Leptospirosis',
+    definition:
+      'Leptospirosis is a bacterial disease carried by many wild animals. A dog can contract the disease from infected animals or by drinking contaminated water. Yearly vaccination limits your dogs chances of acquiring the disease.'
+  },
+
+  {
+    _id: 'term_canine-bordetella',
+    type: 'term',
+    entry: 'Canine Bordetella',
+    definition:
+      'Frequently involved in kennel cough complex, this bacterial infection may occur simultaneously with distemper, adenovirus type 2 infection, parainfluenza and other respiratory infections.'
+  },
+
+  {
+    _id: 'term_canine-borreliosis',
+    type: 'term',
+    entry: 'Canine Borreliosis',
+    definition:
+      '(Lyme Disease).  Borreliosis, or Lyme Disease, is an infection caused by a bacteria which is spread primarily by the painless bite of an infected tick. Symptoms of Borreliosis in the dog include fever, lethargy, muscle stiffness, depression and lack of appetite. In more severe cases, lameness occurs as a result of severe musculoskeletal or arthritic type joint pain.'
+  },
+
+  {
+    _id: 'term_canine-feline-giardiasis',
+    type: 'term',
+    entry: 'Canine/Feline Giardiasis',
+    definition:
+      'Giardiasis in dogs, cats and humans is caused by a waterborne parasite called Giardia lamblia. The parasite is found in untreated water, i.e. puddles, ponds and creeks. Symptoms include severe diarrhea, weight loss, fever, dehydration and nausea.'
+  },
+
+  {
+    _id: 'term_feline-panleukopenia',
+    type: 'term',
+    entry: 'Feline Panleukopenia',
+    definition:
+      'Feline Panleukopenia, sometimes called "feline distemper", causes severe vomiting, diarrhea and dehydration. It is the most widespread disease of cats and causes high death loss, especially among kittens. The disease is caused by a virus and is highly contagious.'
+  },
+
+  {
+    _id: 'term_feline-rhinotracheitis',
+    type: 'term',
+    entry: 'Feline Rhinotracheitis',
+    definition:
+      'Rhinotracheitis infection is a widespread respiratory disease caused by a virus. It is most severe in small kittens and can cause profuse discharge from the eyes and nose.'
+  },
+
+  {
+    _id: 'term_feline-calicivirus',
+    type: 'term',
+    entry: 'Feline Calicivirus',
+    definition:
+      'Calicivirus infection causes a variety of symptoms including fever, excess salivation and mouth or tongue ulcers. It is usually less fatal than rhinotracheitis or panleukopenia.'
+  },
+
+  {
+    _id: 'term_feline-pneumonitis',
+    type: 'term',
+    entry: 'Feline Pneumonitis',
+    definition:
+      'Respiratory infection with symptoms resembling feline viral rhinotracheitis. The disease is caused by the organism Chlamydia psittaci and can be complicated by associated bacterial infections.'
+  },
+  {
+    _id: 'term_feline-leukemia',
+    type: 'term',
+    entry: 'Feline Leukemia',
+    definition:
+      'Feline Leukemia is a form of cancer in cats which is usually fatal. The disease, caused by a virus, can lead to tumor growth nearly anywhere in the body as well as a variety of other symptoms. Infected cats are unable to resist other diseases and may die from associated infections. Testing for the disease is recommended prior to initiating a vaccination program.'
+  },
+
+  {
+    _id: 'term_feline-infectious-peritonitis',
+    type: 'term',
+    entry: 'Feline Infectious Peritonitis',
+    definition:
+      'FIP is a disease caused by a coronavirus. The virus is spread by direct cat-to-cat contact or by contact with contaminated surfaces. There are 2 manifestations of the disease, wet and dry, and both have nonspecific symptoms such as intermittent inappetence, depression, rough hair coat, weight loss, and fever. There is no cure and the disease is considered fatal.'
+  },
+
+  {
     _id: 'person_owner_yarrow-peter',
     type: 'person',
     role: 'owner',
@@ -283,46 +410,6 @@ db.bulkDocs([
       tagNumber: '',
       comments: ''
     }
-  },
-  {
-    type: 'document',
-    _id: 'document_glossary',
-    Glossary: [
-      {
-        Rabies:
-          'Of all animal diseases, rabies is probably the most feared. The rabies virus attacks the brain and is always fatal. Most pets are exposed to rabies by bites from wild animals, particularly skunks, raccoons, bats and foxes. The disease can be transmitted to humans through the bite or scratch of an infected pet. Vaccination of all dogs and cats is the most effective means of control.',
-        'Canine Distemper':
-          'This highly contagious viral disease is found wherever dogs are found. It affects the respiratory and nervous system and is often fatal. Primary vaccination should begin at 6-12 weeks of age since dogs often contract the disease at an early age.',
-        'Canine Parvovirus (CPV)':
-          'This contagious viral disease usually causes severe diarrhea and vomiting in dogs of all ages, but is especially deadly in puppies.',
-        'Canine Coronavirus (CCV)':
-          'Coronavirus is highly contagious and can weaken dogs by causing severe diarrhea and vomiting. The disease is sometimes confused with parvovirus. The two diseases may occur simultaneously, in which case symptoms are more severe.',
-        'Canine Parainfluenza':
-          'This viral respiratory disease is often partly responsible for "kennel cough" in dogs. Infection can be severe in young puppies. Parainfluenza protection is often included in distemper-parvo vaccines.',
-        'Canine Adenovirus Type 1 and Type 2':
-          'Canine Adenovirus Type 1 infection causes infectious hepatitis which may lead to severe kidney damage. Type 2 can be a complicating factor in kennel cough. Vaccines are available that protect against both types of adenovirus.',
-        'Canine Leptospirosis':
-          'Leptospirosis is a bacterial disease carried by many wild animals. A dog can contract the disease from infected animals or by drinking contaminated water. Yearly vaccination limits your dogs chances of acquiring the disease.',
-        'Canine Bordetella':
-          'Frequently involved in kennel cough complex, this bacterial infection may occur simultaneously with distemper, adenovirus type 2 infection, parainfluenza and other respiratory infections.',
-        'Canine Borreliosis':
-          '(Lyme Disease).  Borreliosis, or Lyme Disease, is an infection caused by a bacteria which is spread primarily by the painless bite of an infected tick. Symptoms of Borreliosis in the dog include fever, lethargy, muscle stiffness, depression and lack of appetite. In more severe cases, lameness occurs as a result of severe musculoskeletal or arthritic type joint pain.',
-        'Canine/Feline Giardiasis':
-          'Giardiasis in dogs, cats and humans is caused by a waterborne parasite called Giardia lamblia. The parasite is found in untreated water, i.e. puddles, ponds and creeks. Symptoms include severe diarrhea, weight loss, fever, dehydration and nausea.',
-        'Feline Panleukopenia':
-          'Feline Panleukopenia, sometimes called "feline distemper", causes severe vomiting, diarrhea and dehydration. It is the most widespread disease of cats and causes high death loss, especially among kittens. The disease is caused by a virus and is highly contagious.',
-        'Feline Rhinotracheitis':
-          'Rhinotracheitis infection is a widespread respiratory disease caused by a virus. It is most severe in small kittens and can cause profuse discharge from the eyes and nose.',
-        'Feline Calicivirus':
-          'Calicivirus infection causes a variety of symptoms including fever, excess salivation and mouth or tongue ulcers. It is usually less fatal than rhinotracheitis or panleukopenia.',
-        'Feline Pneumonitis':
-          'Respiratory infection with symptoms resembling feline viral rhinotracheitis. The disease is caused by the organism Chlamydia psittaci and can be complicated by associated bacterial infections.',
-        'Feline Leukemia':
-          'Feline Leukemia is a form of cancer in cats which is usually fatal. The disease, caused by a virus, can lead to tumor growth nearly anywhere in the body as well as a variety of other symptoms. Infected cats are unable to resist other diseases and may die from associated infections. Testing for the disease is recommended prior to initiating a vaccination program.',
-        'Feline Infectious Peritonitis (FIP)':
-          'FIP is a disease caused by a coronavirus. The virus is spread by direct cat-to-cat contact or by contact with contaminated surfaces. There are 2 manifestations of the disease, wet and dry, and both have nonspecific symptoms such as intermittent inappetence, depression, rough hair coat, weight loss, and fever. There is no cure and the disease is considered fatal.'
-      }
-    ]
   }
 ])
 
