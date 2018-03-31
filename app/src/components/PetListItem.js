@@ -15,8 +15,10 @@ import {
   contains
 } from 'ramda'
 
+const dogPic = 'app/src/images/dog.jpg'
+
 const PetListItem = props => {
-  const { name, breed, _id } = props.pet
+  const { name, breed, dateOfBirth, _id } = props.pet
 
   const removeArticles = arrWords => {
     return contains(head(arrWords), ['the', 'a', 'an'])
@@ -33,6 +35,10 @@ const PetListItem = props => {
     toLower
   )(name)
 
+  const birthYear = Number(head(split('-', dateOfBirth)))
+  const currentYear = new Date().getFullYear()
+  const age = currentYear - birthYear
+
   return (
     <Link
       to={`/pets/${_id}`}
@@ -47,7 +53,7 @@ const PetListItem = props => {
           <ListItemText
             style={{ marginLeft: '15px' }}
             primary={name}
-            secondary={breed}
+            secondary={`Breed: ${breed}  Age: ${age} `}
           />
         </ListItem>
       </Link>

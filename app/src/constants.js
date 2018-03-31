@@ -3,7 +3,7 @@ export const ERROR = 'ERROR'
 
 // export const SET_RESOURCES = 'SET_RESOURCES'
 // export const SET_CATEGORIES = 'SET_CATEGORIES'
-// export const TOGGLE_DRAWER = 'TOGGLE_DRAWER'
+export const TOGGLE_DRAWER = 'TOGGLE_DRAWER'
 //
 // export const GET_RESOURCE = 'GET_RESOURCE'
 // export const CHG_CURRENT_RESOURCE = 'CHG_CURRENT_RESOURCE'

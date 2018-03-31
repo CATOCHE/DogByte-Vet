@@ -4,7 +4,7 @@ import { map } from 'ramda'
 import PetListItem from '../../components/PetListItem'
 import List from 'material-ui/List'
 //import withDrawer from '../../components/Drawer'
-//import MenuAppBar from '../../components/MenuAppBar'
+import MenuAppBar from '../../components/MenuAppBar'
 import { Link } from 'react-router-dom'
 import { withStyles } from 'material-ui/styles'
 import AddIcon from 'material-ui-icons/Add'
@@ -27,7 +27,8 @@ const Pets = props => {
   const { classes } = props
   return (
     <div>
-      <div style={{ marginTop: '44px' }}>
+      <MenuAppBar title="Pets" />
+      <div style={{ marginTop: '56px' }}>
         <List>{map(r => <PetListItem pet={r} />, props.pets)}</List>
       </div>
     </div>
@@ -44,8 +45,6 @@ const connector = connect(mapStateToProps)
 
 //export default withDrawer(connector(withStyles(styles)(Pets)))
 export default connector(withStyles(styles)(Pets))
-
-//      <MenuAppBar title="Pets" />
 
 {
   /* <Link to="/pets/new">
