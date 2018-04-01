@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-fetch'
 import {
   SET_PETS,
+  GET_PET,
   //  GET_PETS,
   //  CHG_CURRENT_PET,
   //  CLEAR_CURRENT_PET,
@@ -20,29 +21,29 @@ export const getPets = async (dispatch, getState) => {
   dispatch({ type: SET_PETS, payload: pets })
 }
 
-// export const getResource = id => async (dispatch, getState) => {
-//   dispatch({ type: GET_RESOURCE, payload: {} })
-//   const resource = await fetch(`${url}/resources/${id}`).then(res => res.json())
-//   dispatch({ type: GET_RESOURCE, payload: resource })
-// }
-//
-// export const deleteResource = (id, history) => async (dispatch, getState) => {
-//   const headers = {
-//     'Content-Type': 'application/json'
-//   }
-//   const method = 'DELETE'
-//   const response = await fetch(`${url}/resources/${id}`, {
-//     method,
-//     headers
-//   }).then(res => res.json())
-//   if (!response.ok) {
-//     dispatch({ type: ERROR, payload: 'Could not delete resource' })
-//     return
-//   }
-//   dispatch(getResources)
-//   history.push('/resources')
-// }
-//
+export const getPet = id => async (dispatch, getState) => {
+  dispatch({ type: GET_PET, payload: {} })
+  const pet = await fetch(`${url}/pets/${id}`).then(res => res.json())
+  dispatch({ type: GET_PET, payload: pet })
+}
+
+export const deletePet = (id, history) => async (dispatch, getState) => {
+  const headers = {
+    'Content-Type': 'application/json'
+  }
+  const method = 'DELETE'
+  const response = await fetch(`${url}/pets/${id}`, {
+    method,
+    headers
+  }).then(res => res.json())
+  if (!response.ok) {
+    dispatch({ type: ERROR, payload: 'Could not delete resource' })
+    return
+  }
+  dispatch(getPets)
+  history.push('/pets')
+}
+
 // export const addResource = (resource, history) => async (
 //   dispatch,
 //   getState

@@ -1,6 +1,6 @@
 import {
-  SET_PETS
-  // GET_RESOURCE,
+  SET_PETS,
+  GET_PET
   // CHG_CURRENT_RESOURCE,
   // CLEAR_CURRENT_RESOURCE,
   // CONFIRM_DELETE_RESOURCE
@@ -21,20 +21,20 @@ export const pets = (state = [], action) => {
   }
 }
 
-// export const resource = (state = {}, action) => {
-//   switch (action.type) {
-//     case GET_RESOURCE:
-//       return action.payload
-//     case CHG_CURRENT_RESOURCE:
-//       console.dir(merge(state, action.payload))
-//       return merge(state, action.payload)
-//     case CONFIRM_DELETE_RESOURCE:
-//       console.log('Confirming Delete')
-//       return merge(state, { confirmDelete: not(state.confirmDelete) })
-//     default:
-//       return state
-//   }
-// }
+export const pet = (state = {}, action) => {
+  switch (action.type) {
+    case GET_PET:
+      return action.payload
+    // case CHG_CURRENT_RESOURCE:
+    //   console.dir(merge(state, action.payload))
+    //   return merge(state, action.payload)
+    // case CONFIRM_DELETE_RESOURCE:
+    //   console.log('Confirming Delete')
+    //   return merge(state, { confirmDelete: not(state.confirmDelete) })
+    default:
+      return state
+  }
+}
 
 // export const currentResource = (state = {}, action) => {
 //   switch (action.type) {

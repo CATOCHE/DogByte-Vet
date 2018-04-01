@@ -1,12 +1,3 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import './index.css';
-// import App from './App';
-// import registerServiceWorker from './registerServiceWorker';
-//
-// ReactDOM.render(<App />, document.getElementById('root'));
-// registerServiceWorker();
-
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
@@ -15,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker'
 //
 import store from './store'
 import { Provider } from 'react-redux'
-import { getPets } from './action-creators/pets'
+import { getPets, getPet } from './action-creators/pets'
 // import { getCategories } from './action-creators/categories'
 import 'typeface-roboto'
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles'
@@ -45,4 +36,4 @@ registerServiceWorker()
 
 store.dispatch(getPets)
 // store.dispatch(getCategories)
-// store.dispatch(getResource)
+store.dispatch(getPet)

@@ -24,8 +24,8 @@ import React, { Component } from 'react'
 import './App.css'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 //import Category from './pages/categories/show'
-//import Home from './pages/home'
-//import Resource from './pages/resources/show'
+import Home from './pages/home'
+import Pet from './pages/pets/show'
 import Pets from './pages/pets'
 //import Categories from './pages/categories'
 
@@ -42,7 +42,9 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <Switch>
+            <Route exact path="/" component={Home} />
             <Route exact path="/pets" component={Pets} />
+            <Route exact path="/pets/:id" component={Pet} />
           </Switch>
         </div>
       </BrowserRouter>
@@ -53,14 +55,12 @@ class App extends Component {
 export default App
 
 /*
-<Route exact path="/" component={Home} />
 
 <Route
   exact
   path="/resources/new"
   render={props => <NewResource {...props} />}
 />
-<Route exact path="/resources/:id" component={Resource} />
 <Route exact path="/categories" component={Categories} />
 <Route exact path="/categories/new" component={AddCategory} />
 <Route path="/categories/:id" component={Category} />

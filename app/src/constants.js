@@ -1,15 +1,14 @@
 export const SET_PETS = 'SET_PETS'
 export const ERROR = 'ERROR'
+export const TOGGLE_DRAWER = 'TOGGLE_DRAWER'
 
 // export const SET_RESOURCES = 'SET_RESOURCES'
 // export const SET_CATEGORIES = 'SET_CATEGORIES'
-export const TOGGLE_DRAWER = 'TOGGLE_DRAWER'
 //
-// export const GET_RESOURCE = 'GET_RESOURCE'
+export const GET_PET = 'GET_PET'
 // export const CHG_CURRENT_RESOURCE = 'CHG_CURRENT_RESOURCE'
 // export const CLEAR_CURRENT_RESOURCE = 'CLEAR_CURRENT_RESOURCE'
-// export const CONFIRM_DELETE_RESOURCE = 'CONFIRM_DELETE_RESOURCE'
-// export const ERROR = 'ERROR'
+export const CONFIRM_DELETE_PET = 'CONFIRM_DELETE_PET'
 //
 // export const CURRENT_CAT = 'CURRENT_CAT'
 // export const ADD_CATEGORY = 'ADD_CATEGORY'
