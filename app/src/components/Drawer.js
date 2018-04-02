@@ -33,12 +33,12 @@ const sideList = (
           <ListItemText primary="Pets" />
         </ListItem>
       </Link>
-      <Link to="/categories" className="router-link" style={linkStyle}>
+      <Link to="/glossary" className="router-link" style={linkStyle}>
         <ListItem button>
           <ListItemIcon>
             <ViewList />
           </ListItemIcon>
-          <ListItemText primary="Categories" />
+          <ListItemText primary="Glossary" />
         </ListItem>
       </Link>
     </List>

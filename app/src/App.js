@@ -27,6 +27,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './pages/home'
 import Pet from './pages/pets/show'
 import Pets from './pages/pets'
+import Glossary from './pages/glossary'
 //import Categories from './pages/categories'
 
 //import NewResource from './pages/resources/new-resource'
@@ -45,6 +46,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/pets" component={Pets} />
             <Route exact path="/pets/:id" component={Pet} />
+            <Route exact path="/glossary" component={Glossary} />
           </Switch>
         </div>
       </BrowserRouter>

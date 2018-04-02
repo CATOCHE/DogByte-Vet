@@ -15,7 +15,7 @@ const Welcome = () => (
     />
 
     <Typography style={{ padding: '16px' }} variant="display1">
-      JRS Dogbyte Veterinary
+      JRS Dogbyte Veterinary's Pet Health Management System
     </Typography>
 
     <Link to="/pets">

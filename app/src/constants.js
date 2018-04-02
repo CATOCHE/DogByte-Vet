@@ -1,6 +1,7 @@
 export const SET_PETS = 'SET_PETS'
 export const ERROR = 'ERROR'
 export const TOGGLE_DRAWER = 'TOGGLE_DRAWER'
+export const SET_GLOSSARY = 'SET_GLOSSARY'
 
 // export const SET_RESOURCES = 'SET_RESOURCES'
 // export const SET_CATEGORIES = 'SET_CATEGORIES'

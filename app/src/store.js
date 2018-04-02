@@ -1,5 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { pet, pets } from './reducers/pets'
+import { glossary } from './reducers/glossary'
 
 //
 // import { resource, resources, currentResource } from './reducers/resources'
@@ -19,6 +20,7 @@ const store = createStore(
     // appData,
     // category,
     // categories,
+    glossary,
     drawer
     // currentResource,
     // addCategoryForm,

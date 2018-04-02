@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { map } from 'ramda'
-import PetListItem from '../../components/PetListItem'
+import GlossaryListItem from '../../components/GlossaryListItem'
 import List from 'material-ui/List'
 //import withDrawer from '../../components/Drawer'
 import MenuAppBar from '../../components/MenuAppBar'
@@ -22,31 +22,30 @@ const styles = theme => ({
   pageMargin: { marginTop: '56px' }
 })
 
-const Pets = props => {
+const Glossary = props => {
   //////////// props.toggleDrawer()
-  const { classes } = props
-  console.log('PAGES PETS props: ', props)
+  const { classes, glossary } = props
+  console.log('PAGES GLOSSARY INDEX props', props)
   return (
     <div>
-      <MenuAppBar title="Pets" />
+      <MenuAppBar title="Glossary" />
       <div style={{ marginTop: '56px' }}>
-        <List>{map(r => <PetListItem pet={r} />, props.pets)}</List>
+        <List>{map(e => <GlossaryListItem entry={e} />, glossary)}</List>
       </div>
     </div>
   )
 }
 
 const mapStateToProps = state => {
-  console.log('PAGES PETS MAPSTATETOPROPS state: ', state)
   return {
-    pets: state.pets
+    glossary: state.glossary
   }
 }
 
 const connector = connect(mapStateToProps)
 
 //export default withDrawer(connector(withStyles(styles)(Pets)))
-export default connector(withStyles(styles)(Pets))
+export default connector(withStyles(styles)(Glossary))
 
 {
   /* <Link to="/pets/new">

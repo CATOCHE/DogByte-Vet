@@ -15,10 +15,9 @@ import {
   contains
 } from 'ramda'
 
-const dogPic = '/jr-dog.png'
-
-const PetListItem = props => {
-  const { name, breed, dateOfBirth, _id, species } = props.pet
+const GlossaryListItem = props => {
+  console.log('COMPONENT GlossaryListItem props: ', props)
+  const { term, definition, _id } = props.entry
 
   const removeArticles = arrWords => {
     return contains(head(arrWords), ['the', 'a', 'an'])
@@ -26,41 +25,33 @@ const PetListItem = props => {
       : arrWords
   }
 
-  const avatarLetter = compose(
+  const glossaryLetter = compose(
     toUpper,
     slice(0, 1),
     join(' '),
     removeArticles,
     split(' '),
     toLower
-  )(name)
-
-  const birthYear = Number(head(split('-', dateOfBirth)))
-  const currentYear = new Date().getFullYear()
-  const age = currentYear - birthYear
-  const petPic = species => {
-    if (species === 'cat') {
-      return '/cat.jpeg'
-    } else {
-      return '/jr-dog.png'
-    }
-  }
+  )(term)
 
   return (
     <Link
-      to={`/pets/${_id}`}
+      to={`/glossary/${_id}`}
       style={{
         textDecoration: 'none',
         color: 'black'
       }}
     >
-      <Link style={{ textDecoration: 'none' }} to={`/pets/${props.pet._id}`}>
+      <Link
+        style={{ textDecoration: 'none' }}
+        to={`/glossary/${props.entry._id}`}
+      >
         <ListItem>
-          <Avatar src={petPic(species)} />
+          <Avatar> {glossaryLetter} </Avatar>
           <ListItemText
             style={{ marginLeft: '15px' }}
-            primary={name}
-            secondary={`Breed: ${breed}     Age: ${age} `}
+            primary={term}
+            secondary={definition}
           />
         </ListItem>
       </Link>
@@ -69,4 +60,4 @@ const PetListItem = props => {
   )
 }
 
-export default PetListItem
+export default GlossaryListItem

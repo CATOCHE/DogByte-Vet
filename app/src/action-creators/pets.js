@@ -18,6 +18,7 @@ getPets()
 */
 export const getPets = async (dispatch, getState) => {
   const pets = await fetch(`${url}/pets`).then(res => res.json())
+  console.log('ACTION-CREATOR pets: ', pets)
   dispatch({ type: SET_PETS, payload: pets })
 }
 
