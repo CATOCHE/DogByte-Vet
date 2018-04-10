@@ -5,7 +5,7 @@ import {
   // CLEAR_CURRENT_RESOURCE,
   // CONFIRM_DELETE_RESOURCE
 } from '../constants'
-import { merge, not } from 'ramda'
+//import { merge, not } from 'ramda'
 
 /*
 A reducer named "resources" would be responsible

@@ -6,7 +6,7 @@ import {
   // TOGGLE_DELETE,
   // EDIT_CURRENT_CATEGORY
 } from '../constants'
-import { merge, not } from 'ramda'
+//import { merge, not } from 'ramda'
 
 export const glossary = (state = [], action) => {
   switch (action.type) {

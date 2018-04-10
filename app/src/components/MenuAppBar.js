@@ -30,7 +30,7 @@ const styles = theme => ({
 
 const MenuAppBar = props => {
   const { classes } = props
-
+  console.log('MenuAppBar classes: ', classes)
   return (
     <div className={classes.root}>
       <AppBar position="fixed">
@@ -38,7 +38,7 @@ const MenuAppBar = props => {
           {props.showBackArrow ? (
             <IconButton
               className={classes.firstButton}
-              color="contrast"
+              color="inherit"
               aria-label="Menu"
               onClick={e => props.navigateBack(props.history)}
             >
@@ -47,7 +47,7 @@ const MenuAppBar = props => {
           ) : (
             <IconButton
               className={classes.firstButton}
-              color="contrast"
+              color="inherit"
               aria-label="Menu"
               onClick={props.toggleDrawer}
             >
@@ -60,7 +60,7 @@ const MenuAppBar = props => {
           <Link to="/search">
             <IconButton
               className={classes.lastButton}
-              color="contrast"
+              color="inherit"
               aria-label="Search"
             >
               <SearchIcon />

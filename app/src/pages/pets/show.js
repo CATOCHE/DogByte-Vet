@@ -1,9 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PetListItem from '../../components/PetListItem'
+import MedRecordListItem from '../../components/MedRecordListItem'
 import MenuAppBar from '../../components/MenuAppBar'
-import { getPet, deletePet } from '../../action-creators/pets'
-import { CONFIRM_DELETE_PET } from '../../constants'
+//import { getPet, deletePet } from '../../action-creators/pets'
+import { getPet } from '../../action-creators/pets'
+//import { CONFIRM_DELETE_PET } from '../../constants'
 import Paper from 'material-ui/Paper'
 import Typography from 'material-ui/Typography'
 import { withStyles } from 'material-ui/styles'
@@ -13,8 +15,8 @@ import Dialog, {
   DialogActions,
   DialogContent,
   DialogContentText,
-  DialogTitle,
-  withMobileDialog
+  DialogTitle
+  //  withMobileDialog
 } from 'material-ui/Dialog'
 
 const styles = theme => ({
@@ -37,61 +39,23 @@ class Pet extends React.Component {
   render() {
     const props = this.props
     const { classes } = props
+    console.log('Show before Loading Pet Info PROPS:', props)
+    console.log('Show before Loading Pet Info CLASSES:', classes)
     if (props.pet._id !== props.match.params.id) {
       return <h1>Loading Pet Info...</h1>
     }
 
     return (
       <div>
-        <MenuAppBar {...props} showBackArrow={true} title="Pet BIO" />
+        <MenuAppBar {...props} showBackArrow={true} title="Pet Records" />
         <div style={{ marginTop: '34px' }}>
           <div>
             <Paper className={classes.root} elevation={2}>
               <PetListItem pet={props.pet} />
-              <Typography style={{ paddingTop: '8px' }} component="p">
-                {props.pet.purpose}
-              </Typography>
+              <MedRecordListItem pet={props.pet} />
             </Paper>
-
-            <Link
-              style={{ textDecoration: 'none' }}
-              to={`/pets/${props.pet._id}/edit`}
-            >
-              <Button>Edit</Button>
-            </Link>
-
-            <Button color="secondary" onClick={props.toggleConfirmDelete}>
-              Delete
-            </Button>
           </div>
         </div>
-        <Dialog
-          open={props.pet.confirmDelete}
-          onClose={props.toggleConfirmDelete}
-        >
-          <DialogTitle>{'Delete'}</DialogTitle>
-          <DialogContent>
-            <DialogContentText>
-              {`Are you sure you want to delete this pet?`}
-            </DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button
-              onClick={props.toggleConfirmDelete}
-              color="primary"
-              autofocus
-            >
-              Cancel
-            </Button>
-            <Button
-              onClick={() => props.deletePet(props.pet._id, props.history)}
-              color="primary"
-              autoFocus
-            >
-              Confirm Delete
-            </Button>
-          </DialogActions>
-        </Dialog>
       </div>
     )
   }
@@ -105,12 +69,58 @@ const mapStateToProps = state => {
 
 const mapActionsToProps = dispatch => {
   return {
-    getPet: id => dispatch(getPet(id)),
-    toggleConfirmDelete: () => dispatch({ type: CONFIRM_DELETE_PET }),
-    deletePet: (id, history) => dispatch(deletePet(id, history))
+    getPet: id => dispatch(getPet(id))
+    //    toggleConfirmDelete: () => dispatch({ type: CONFIRM_DELETE_PET }),
+    //    deletePet: (id, history) => dispatch(deletePet(id, history))
   }
 }
 
 const connector = connect(mapStateToProps, mapActionsToProps)
 
 export default connector(withStyles(styles)(Pet))
+
+/*
+This is the definition of the Edit and Delete Buttons that were on line 57
+
+<Link
+  style={{ textDecoration: 'none' }}
+  to={`/pets/${props.pet._id}/edit`}
+>
+  <Button>Edit</Button>
+</Link>
+
+<Button color="secondary" onClick={props.toggleConfirmDelete}>
+  Delete
+</Button>
+*/
+
+/* This is the whole Dialog for the Delete Button from line 59
+<Dialog
+  open={props.pet.confirmDelete}
+  onClose={props.toggleConfirmDelete}
+>
+  <DialogTitle>{'Delete'}</DialogTitle>
+  <DialogContent>
+    <DialogContentText>
+      {`Are you sure you want to delete this pet?`}
+    </DialogContentText>
+  </DialogContent>
+  <DialogActions>
+    <Button
+      onClick={props.toggleConfirmDelete}
+      color="primary"
+      autofocus
+    >
+      Cancel
+    </Button>
+    <Button
+      onClick={() => props.deletePet(props.pet._id, props.history)}
+      color="primary"
+      autoFocus
+    >
+      Confirm Delete
+    </Button>
+  </DialogActions>
+</Dialog>
+
+*/

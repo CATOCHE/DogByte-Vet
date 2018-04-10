@@ -3,11 +3,11 @@ import { connect } from 'react-redux'
 import { map } from 'ramda'
 import PetListItem from '../../components/PetListItem'
 import List from 'material-ui/List'
-//import withDrawer from '../../components/Drawer'
+import withDrawer from '../../components/Drawer'
 import MenuAppBar from '../../components/MenuAppBar'
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 import { withStyles } from 'material-ui/styles'
-import AddIcon from 'material-ui-icons/Add'
+//import AddIcon from 'material-ui-icons/Add'
 // import Button from 'material-ui/Button'
 
 const styles = theme => ({
@@ -24,7 +24,7 @@ const styles = theme => ({
 
 const Pets = props => {
   //////////// props.toggleDrawer()
-  const { classes } = props
+  ///  const { classes, pets } = props
   console.log('PAGES PETS props: ', props)
   return (
     <div>
@@ -45,18 +45,18 @@ const mapStateToProps = state => {
 
 const connector = connect(mapStateToProps)
 
-//export default withDrawer(connector(withStyles(styles)(Pets)))
-export default connector(withStyles(styles)(Pets))
+export default withDrawer(connector(withStyles(styles)(Pets)))
+//export default connector(withStyles(styles)(Pets))
 
-{
-  /* <Link to="/pets/new">
-  <Button
-    className={classes.button}
-    variant="fab"
-    color="primary"
-    aria-label="add"
-  >
-    <AddIcon />
-  </Button>
-</Link> */
-}
+// {
+//   /* <Link to="/pets/new">
+//   <Button
+//     className={classes.button}
+//     variant="fab"
+//     color="primary"
+//     aria-label="add"
+//   >
+//     <AddIcon />
+//   </Button>
+// </Link> */
+// }
