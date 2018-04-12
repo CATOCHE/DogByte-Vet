@@ -6,6 +6,10 @@ import Pet from './pages/pets/show'
 import Pets from './pages/pets'
 import Glossary from './pages/glossary'
 import BioShow from './pages/bio/show'
+import VaccShow from './pages/vacc/show'
+import LabShow from './pages/lab/show'
+import HistShow from './pages/hist/show'
+import RabShow from './pages/rab/show'
 // import BIO from './pages/BIO'
 //import Categories from './pages/categories'
 
@@ -27,6 +31,10 @@ class App extends Component {
             <Route exact path="/pets/:id" component={Pet} />
             <Route exact path="/glossary" component={Glossary} />
             <Route exact path="/bio/show/:id" component={BioShow} />
+            <Route exact path="/vacc/show/:id" component={VaccShow} />
+            <Route exact path="/lab/show/:id" component={LabShow} />
+            <Route exact path="/hist/show/:id" component={HistShow} />
+            <Route exact path="/rab/show/:id" component={RabShow} />
           </Switch>
         </div>
       </BrowserRouter>

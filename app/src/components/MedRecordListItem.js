@@ -32,7 +32,10 @@ const MedRecordListItem = props => {
         </ListItem>
         <Divider />
       </Link>
-      <Link style={{ textDecoration: 'none' }} to={`/pets/${props.pet._id}`}>
+      <Link
+        style={{ textDecoration: 'none' }}
+        to={`/vacc/show/${props.pet._id}`}
+      >
         <ListItem>
           <Avatar src="/injection.png" />
           <ListItemText
@@ -43,7 +46,10 @@ const MedRecordListItem = props => {
         </ListItem>
         <Divider />
       </Link>
-      <Link style={{ textDecoration: 'none' }} to={`/pets/${props.pet._id}`}>
+      <Link
+        style={{ textDecoration: 'none' }}
+        to={`/lab/show/${props.pet._id}`}
+      >
         <ListItem>
           <Avatar src="/lab-200.png" />
           <ListItemText
@@ -54,7 +60,10 @@ const MedRecordListItem = props => {
         </ListItem>
         <Divider />
       </Link>
-      <Link style={{ textDecoration: 'none' }} to={`/pets/${props.pet._id}`}>
+      <Link
+        style={{ textDecoration: 'none' }}
+        to={`/hist/show/${props.pet._id}`}
+      >
         <ListItem>
           <Avatar src="/Medical_Chart.png" />
           <ListItemText
@@ -65,7 +74,10 @@ const MedRecordListItem = props => {
         </ListItem>
         <Divider />
       </Link>
-      <Link style={{ textDecoration: 'none' }} to={`/pets/${props.pet._id}`}>
+      <Link
+        style={{ textDecoration: 'none' }}
+        to={`/rab/show/${props.pet._id}`}
+      >
         <ListItem>
           <Avatar src="/dog-tag.jpeg" />
           <ListItemText
