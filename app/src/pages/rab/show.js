@@ -86,9 +86,6 @@ class VaccShow extends React.Component {
                 <Button size="small" color="primary">
                   EDIT
                 </Button>
-                <Button size="small" color="primary">
-                  DELETE
-                </Button>
               </CardActions>
             </Card>
           </Paper>

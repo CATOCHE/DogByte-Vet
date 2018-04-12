@@ -2,6 +2,7 @@ import fetch from 'isomorphic-fetch'
 import {
   SET_PETS,
   GET_PET,
+  GET_PERSON,
   //  GET_PETS,
   //  CHG_CURRENT_PET,
   //  CLEAR_CURRENT_PET,
@@ -26,6 +27,11 @@ export const getPet = id => async (dispatch, getState) => {
   dispatch({ type: GET_PET, payload: {} })
   const pet = await fetch(`${url}/pets/${id}`).then(res => res.json())
   dispatch({ type: GET_PET, payload: pet })
+  const person = await fetch(`${url}/people/${pet.ownerID}`).then(res =>
+    res.json()
+  )
+  console.log('ACTION-CREATOR person: ', person)
+  dispatch({ type: GET_PERSON, payload: person })
 }
 
 export const deletePet = (id, history) => async (dispatch, getState) => {

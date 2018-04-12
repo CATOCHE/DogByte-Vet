@@ -24,6 +24,7 @@ export const people = (state = [], action) => {
 export const person = (state = {}, action) => {
   switch (action.type) {
     case GET_PERSON:
+      console.log('GET_PERSON REDUCER state is: ', action.payload)
       return action.payload
     // case CHG_CURRENT_RESOURCE:
     //   console.dir(merge(state, action.payload))

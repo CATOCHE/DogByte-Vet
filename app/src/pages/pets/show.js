@@ -9,7 +9,7 @@ import { getPet } from '../../action-creators/pets'
 import Paper from 'material-ui/Paper'
 //import Typography from 'material-ui/Typography'
 import { withStyles } from 'material-ui/styles'
-//import Button from 'material-ui/Button'
+import Button from 'material-ui/Button'
 //import { Link } from 'react-router-dom'
 // import Dialog, {
 //   DialogActions,
@@ -53,6 +53,9 @@ class Pet extends React.Component {
             <Paper className={classes.root} elevation={2}>
               <PetListItem pet={props.pet} />
               <MedRecordListItem pet={props.pet} />
+              <Button size="medium" color="primary">
+                DELETE
+              </Button>
             </Paper>
           </div>
         </div>
