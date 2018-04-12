@@ -139,12 +139,10 @@ db.bulkDocs([
     role: 'owner',
     firstName: 'Peter',
     lastName: 'Yarrow',
-    Address: {
-      street: '395 Ottawa Road',
-      city: 'Summerville',
-      state: 'SC',
-      zipCode: '29457'
-    },
+    street: '395 Ottawa Road',
+    city: 'Summerville',
+    state: 'SC',
+    zipCode: '29457',
     phone: '843-801-4387',
     email: 'peters@gmail.com'
   },
@@ -154,12 +152,10 @@ db.bulkDocs([
     role: 'vet',
     firstName: 'John',
     lastName: 'Dolittle',
-    Address: {
-      street: '2568 Willow Road',
-      city: 'Ladson',
-      state: 'SC',
-      zipCode: '29456'
-    },
+    street: '2568 Willow Road',
+    city: 'Ladson',
+    state: 'SC',
+    zipCode: '29456',
     phone: '843-734-2891',
     email: 'DrDoolil@gmail.com'
   },
@@ -169,12 +165,10 @@ db.bulkDocs([
     role: 'owner',
     firstName: 'Mary',
     lastName: 'Travers',
-    Address: {
-      street: '3146 Glenn Street',
-      city: 'North Charleston',
-      state: 'SC',
-      zipCode: '29481'
-    },
+    street: '3146 Glenn Street',
+    city: 'North Charleston',
+    state: 'SC',
+    zipCode: '29481',
     phone: '843-351-9847',
     email: 'matrav@gmail.com'
   },
@@ -184,12 +178,10 @@ db.bulkDocs([
     role: 'owner',
     firstName: 'Charlie',
     lastName: 'Brown',
-    Address: {
-      street: '1 Pinetree Corners',
-      city: 'St. Paul',
-      state: 'MN',
-      zipCode: '55111'
-    },
+    street: '1 Pinetree Corners',
+    city: 'St. Paul',
+    state: 'MN',
+    zipCode: '55111',
     phone: '843-351-9847',
     email: 'CBrown@gmail.com'
   },
@@ -199,12 +191,10 @@ db.bulkDocs([
     role: 'owner',
     firstName: 'Norville Shaggy',
     lastName: 'Rogers',
-    Address: {
-      street: 'Always the move.',
-      city: '',
-      state: '',
-      zipCode: ''
-    },
+    street: 'always on the move...',
+    city: '',
+    state: '',
+    zipCode: '',
     phone: '800-478-3219',
     email: 'Shaggy@gmail.com'
   },
@@ -214,12 +204,10 @@ db.bulkDocs([
     role: 'owner',
     firstName: 'Granny Emma',
     lastName: 'Webster',
-    Address: {
-      street: 'Grannys Mansion',
-      city: '',
-      state: '',
-      zipCode: ''
-    },
+    street: 'Grannys Mansion',
+    city: '',
+    state: '',
+    zipCode: '',
     phone: '',
     email: 'Grannys@gmail.com'
   },

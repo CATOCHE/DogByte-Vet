@@ -7,17 +7,17 @@ import MenuAppBar from '../../components/MenuAppBar'
 import { getPet } from '../../action-creators/pets'
 //import { CONFIRM_DELETE_PET } from '../../constants'
 import Paper from 'material-ui/Paper'
-import Typography from 'material-ui/Typography'
+//import Typography from 'material-ui/Typography'
 import { withStyles } from 'material-ui/styles'
-import Button from 'material-ui/Button'
-import { Link } from 'react-router-dom'
-import Dialog, {
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle
-  //  withMobileDialog
-} from 'material-ui/Dialog'
+//import Button from 'material-ui/Button'
+//import { Link } from 'react-router-dom'
+// import Dialog, {
+//   DialogActions,
+//   DialogContent,
+//   DialogContentText,
+//   DialogTitle
+//   //  withMobileDialog
+// } from 'material-ui/Dialog'
 
 const styles = theme => ({
   root: theme.mixins.gutters({
@@ -42,7 +42,7 @@ class Pet extends React.Component {
     console.log('Show before Loading Pet Info PROPS:', props)
     console.log('Show before Loading Pet Info CLASSES:', classes)
     if (props.pet._id !== props.match.params.id) {
-      return <h1>Loading Pet Info...</h1>
+      return <h3>Loading Pet Info...</h3>
     }
 
     return (
@@ -63,7 +63,8 @@ class Pet extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    pet: state.pet
+    pet: state.pet,
+    people: state.people
   }
 }
 

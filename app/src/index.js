@@ -7,6 +7,7 @@ import registerServiceWorker from './registerServiceWorker'
 import store from './store'
 import { Provider } from 'react-redux'
 import { getPets, getPet } from './action-creators/pets'
+import { getPeople, getPerson } from './action-creators/owners'
 import { getGlossary } from './action-creators/glossary'
 // import { getCategories } from './action-creators/categories'
 import 'typeface-roboto'
@@ -36,6 +37,8 @@ ReactDOM.render(
 registerServiceWorker()
 
 store.dispatch(getPets)
+store.dispatch(getPet)
+store.dispatch(getPerson)
+store.dispatch(getPeople)
 store.dispatch(getGlossary)
 // store.dispatch(getCategories)
-store.dispatch(getPet)

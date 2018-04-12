@@ -1,5 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { pet, pets } from './reducers/pets'
+import { person, people } from './reducers/owners'
 import { glossary } from './reducers/glossary'
 
 //
@@ -17,6 +18,8 @@ const store = createStore(
   combineReducers({
     pet,
     pets,
+    people,
+    person,
     // appData,
     // category,
     // categories,
