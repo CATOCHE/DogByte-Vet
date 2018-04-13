@@ -13,7 +13,7 @@ import RabShow from './pages/rab/show'
 // import BIO from './pages/BIO'
 //import Categories from './pages/categories'
 
-//import NewResource from './pages/resources/new-resource'
+import NewPet from './pages/pets/new-pet'
 
 //import AddCategory from './pages/categories/addCategory'
 //import Search from './pages/search'
@@ -28,6 +28,11 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/pets" component={Pets} />
+            <Route
+              exact
+              path="/pets/new"
+              render={props => <NewPet {...props} />}
+            />
             <Route exact path="/pets/:id" component={Pet} />
             <Route exact path="/glossary" component={Glossary} />
             <Route exact path="/bio/show/:id" component={BioShow} />
@@ -47,11 +52,6 @@ export default App
 /*
 <Route exact path="/pet/bio" component={BIO} />
 
-<Route
-  exact
-  path="/resources/new"
-  render={props => <NewResource {...props} />}
-/>
 <Route exact path="/categories" component={Categories} />
 <Route exact path="/categories/new" component={AddCategory} />
 <Route path="/categories/:id" component={Category} />

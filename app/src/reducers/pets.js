@@ -1,10 +1,11 @@
 import {
   SET_PETS,
-  GET_PET
-  // CHG_CURRENT_RESOURCE,
-  // CLEAR_CURRENT_RESOURCE,
+  GET_PET,
+  CHG_CURRENT_PET,
+  CLEAR_CURRENT_PET
   // CONFIRM_DELETE_RESOURCE
 } from '../constants'
+import { merge } from 'ramda'
 //import { merge, not } from 'ramda'
 
 /*
@@ -36,11 +37,13 @@ export const pet = (state = {}, action) => {
   }
 }
 
-// export const currentResource = (state = {}, action) => {
-//   switch (action.type) {
-//     case CLEAR_CURRENT_RESOURCE:
-//       return {}
-//     default:
-//       return state
-//   }
-// }
+export const currentPet = (state = {}, action) => {
+  switch (action.type) {
+    case CHG_CURRENT_PET:
+      return merge(state, action.payload)
+    case CLEAR_CURRENT_PET:
+      return {}
+    default:
+      return state
+  }
+}

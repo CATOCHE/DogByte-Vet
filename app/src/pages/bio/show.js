@@ -66,11 +66,6 @@ class BioShow extends React.Component {
             <PetListItem pet={props.pet} />
 
             <Card className={classes.card}>
-              <CardMedia
-                className={classes.media}
-                image="/jr-dog.png"
-                title="Puppy Dog"
-              />
               <CardContent>
                 <Typography gutterBottom variant="subheading" component="h4">
                   Owner's Bio
