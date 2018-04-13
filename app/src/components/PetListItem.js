@@ -8,21 +8,6 @@ import { split, head } from 'ramda'
 const PetListItem = props => {
   const { name, breed, dateOfBirth, species } = props.pet
 
-  // const removeArticles = arrWords => {
-  //   return contains(head(arrWords), ['the', 'a', 'an'])
-  //     ? drop(1, arrWords)
-  //     : arrWords
-  // }
-  //
-  // const avatarLetter = compose(
-  //   toUpper,
-  //   slice(0, 1),
-  //   join(' '),
-  //   removeArticles,
-  //   split(' '),
-  //   toLower
-  // )(name)
-
   const birthYear = Number(head(split('-', dateOfBirth)))
   const currentYear = new Date().getFullYear()
   const age = currentYear - birthYear

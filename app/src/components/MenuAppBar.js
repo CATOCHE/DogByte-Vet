@@ -33,7 +33,6 @@ const styles = theme => ({
 
 const MenuAppBar = props => {
   const { classes } = props
-  console.log('MenuAppBar classes: ', classes)
   return (
     <div className={classes.root}>
       <AppBar position="fixed">
@@ -85,7 +84,6 @@ const mapActionsToProps = (dispatch, getState) => {
   return {
     toggleDrawer: () => dispatch({ type: TOGGLE_DRAWER }),
     navigateBack: history => {
-      console.log('history', history)
       history.goBack()
     }
   }

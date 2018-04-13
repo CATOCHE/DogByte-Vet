@@ -3,19 +3,8 @@ import { ListItem, ListItemText } from 'material-ui/List'
 import Avatar from 'material-ui/Avatar'
 import Divider from 'material-ui/Divider'
 import { Link } from 'react-router-dom'
-//import { split, head } from 'ramda'
 
 const MedRecordListItem = props => {
-  //  const { name, breed, dateOfBirth, species } = props.pet
-
-  // const petPic = species => {
-  //   if (species === 'cat') {
-  //     return '/cat.jpeg'
-  //   } else {
-  //     return '/jr-dog.png'
-  //   }
-  // }
-
   return (
     <div>
       <Link

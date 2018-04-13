@@ -1,9 +1,6 @@
 import React from 'react'
 import { ListItem, ListItemText } from 'material-ui/List'
-//import Avatar from 'material-ui/Avatar'
 import Divider from 'material-ui/Divider'
-//import { Link } from 'react-router-dom'
-//import { split, head } from 'ramda'
 
 const LabListItem = props => {
   const { date, type, result, comments } = props.pet.labTests

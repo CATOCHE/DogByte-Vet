@@ -10,15 +10,8 @@ import VaccShow from './pages/vacc/show'
 import LabShow from './pages/lab/show'
 import HistShow from './pages/hist/show'
 import RabShow from './pages/rab/show'
-// import BIO from './pages/BIO'
-//import Categories from './pages/categories'
 
 import NewPet from './pages/pets/new-pet'
-
-//import AddCategory from './pages/categories/addCategory'
-//import Search from './pages/search'
-
-//import EditResource from './pages/resources/edit'
 
 class App extends Component {
   render() {
@@ -48,13 +41,3 @@ class App extends Component {
 }
 
 export default App
-
-/*
-<Route exact path="/pet/bio" component={BIO} />
-
-<Route exact path="/categories" component={Categories} />
-<Route exact path="/categories/new" component={AddCategory} />
-<Route path="/categories/:id" component={Category} />
-<Route path="/search" component={Search} />
-<Route path="/resources/:id/edit" component={EditResource} />
-*/

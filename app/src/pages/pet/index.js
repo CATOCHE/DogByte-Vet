@@ -7,7 +7,6 @@ import MenuAppBar from '../../components/MenuAppBar'
 import { getPet } from '../../action-creators/pets'
 
 class Pet extends React.Component {
-  // props.toggleDrawer()
   componentDidMount() {
     const id = this.props.match.params.id
     this.props.getPet(id)
@@ -29,9 +28,6 @@ class Pet extends React.Component {
     )
   }
 }
-
-//<ResourceListItem resource={this.props.resource} />
-//<ResourceListItem name={props.name} shortDesc={props.shortDesc} />
 
 const mapStateToProps = state => {
   return {

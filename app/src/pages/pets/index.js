@@ -23,9 +23,7 @@ const styles = theme => ({
 })
 
 const Pets = props => {
-  //////////// props.toggleDrawer()
   const { classes } = props
-  console.log('PAGES PETS props: ', props)
   return (
     <div>
       <MenuAppBar title="Pets" />
@@ -47,7 +45,6 @@ const Pets = props => {
 }
 
 const mapStateToProps = state => {
-  console.log('PAGES PETS MAPSTATETOPROPS state: ', state)
   return {
     pets: state.pets
   }
@@ -56,8 +53,3 @@ const mapStateToProps = state => {
 const connector = connect(mapStateToProps)
 
 export default withDrawer(connector(withStyles(styles)(Pets)))
-//export default connector(withStyles(styles)(Pets))
-
-// {
-//   /* */
-// }

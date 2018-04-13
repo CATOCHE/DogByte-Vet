@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { addPet, chgPet } from '../../action-creators/pets'
 
 const NewPet = props => {
-  console.log('NewPet props', props)
   return (
     <div>
       <h3>Add a New Pet</h3>
