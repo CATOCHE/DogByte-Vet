@@ -1,16 +1,16 @@
 import React from 'react'
-import { ListItem, ListItemText } from 'material-ui/List'
-import Avatar from 'material-ui/Avatar'
-import Divider from 'material-ui/Divider'
-import { Link } from 'react-router-dom'
+//import { ListItem, ListItemText } from 'material-ui/List'
+//import Avatar from 'material-ui/Avatar'
+//import Divider from 'material-ui/Divider'
+//import { Link } from 'react-router-dom'
 //import { split, head } from 'ramda'
-import PropTypes from 'prop-types'
-import { withStyles } from 'material-ui/styles'
-import MenuItem from 'material-ui/Menu/MenuItem'
+//import PropTypes from 'prop-types'
+//import { withStyles } from 'material-ui/styles'
+//import MenuItem from 'material-ui/Menu/MenuItem'
 import TextField from 'material-ui/TextField'
 
 const OwnerBioListItem = props => {
-  const { classes } = props
+  //  const { classes } = props
   console.log('OwnerBioListItem props: ', props)
   const { firstName } = props.person
   console.log('OwnerBioListItem firstName: ', firstName)

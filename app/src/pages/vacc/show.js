@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PetListItem from '../../components/PetListItem'
-import OwnerBioListItem from '../../components/OwnerBio'
 import MenuAppBar from '../../components/MenuAppBar'
 //import { getPet, deletePet } from '../../action-creators/pets'
 import { getPet } from '../../action-creators/pets'
@@ -10,12 +9,16 @@ import { getPerson } from '../../action-creators/owners'
 import Paper from 'material-ui/Paper'
 //import Typography from 'material-ui/Typography'
 import { withStyles } from 'material-ui/styles'
-import TextField from 'material-ui/TextField'
+//import TextField from 'material-ui/TextField'
 import Button from 'material-ui/Button'
 import PropTypes from 'prop-types'
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card'
 import Typography from 'material-ui/Typography'
 import Divider from 'material-ui/Divider'
+import { FormGroup, FormControlLabel } from 'material-ui/Form'
+import Checkbox from 'material-ui/Checkbox'
+import { If, Then, Else } from 'react-if-elseif-else-render'
+
 //import { Link } from 'react-router-dom'
 // import Dialog, {
 //   DialogActions,
@@ -70,21 +73,219 @@ class VaccShow extends React.Component {
             <PetListItem pet={props.pet} />
 
             <Card className={classes.card}>
-              <CardMedia
-                className={classes.media}
-                image="/jr-dog.png"
-                title="Puppy Dog"
-              />
               <CardContent>
                 <Typography gutterBottom variant="subheading" component="h4">
                   Vaccination Records
                 </Typography>
                 <Typography className={classes.title} color="textSecondary">
-                  name
+                  vaccination date
                 </Typography>
                 <Typography gutterBottom variant="body2" component="h5">
-                  {this.props.person.firstName} {this.props.person.lastName}
+                  {this.props.pet.vaccinations.vaccinationDate}
                 </Typography>
+                <Typography className={classes.title} color="textSecondary">
+                  age at vaccination
+                </Typography>
+                <Typography gutterBottom variant="body2" component="h5">
+                  {this.props.pet.vaccinations.ageAtVaccination}
+                </Typography>
+                <Divider />
+
+                <If condition={this.props.pet.species === 'cat'}>
+                  <Then>
+                    <FormGroup row>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={
+                              this.props.pet.vaccinations.vaccinationsGiven
+                                .leukemiaVirus
+                            }
+                          />
+                        }
+                        label="Leukemia Virus"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={
+                              this.props.pet.vaccinations.vaccinationsGiven
+                                .panleukopenia
+                            }
+                          />
+                        }
+                        label="Panleukopenia"
+                      />
+                    </FormGroup>
+                    <FormGroup row>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={
+                              this.props.pet.vaccinations.vaccinationsGiven
+                                .calicivirus
+                            }
+                          />
+                        }
+                        label="Calici Virus"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={
+                              this.props.pet.vaccinations.vaccinationsGiven
+                                .rhinortracheitis
+                            }
+                          />
+                        }
+                        label="Rhinortracheitis"
+                      />
+                    </FormGroup>
+                    <FormGroup row>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={
+                              this.props.pet.vaccinations.vaccinationsGiven
+                                .pneumonitis
+                            }
+                          />
+                        }
+                        label="Pneumonitis"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={
+                              this.props.pet.vaccinations.vaccinationsGiven.fip
+                            }
+                          />
+                        }
+                        label="FIP"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={
+                              this.props.pet.vaccinations.vaccinationsGiven
+                                .rabies
+                            }
+                          />
+                        }
+                        label="Rabies"
+                      />
+                    </FormGroup>
+                  </Then>
+                  <Else>
+                    <FormGroup row>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={
+                              this.props.pet.vaccinations.vaccinationsGiven
+                                .lymeDisease
+                            }
+                          />
+                        }
+                        label="Lyme Disease"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={
+                              this.props.pet.vaccinations.vaccinationsGiven
+                                .distemper
+                            }
+                          />
+                        }
+                        label="Distemper"
+                      />
+                    </FormGroup>
+                    <FormGroup row>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={
+                              this.props.pet.vaccinations.vaccinationsGiven
+                                .adenovirus2
+                            }
+                          />
+                        }
+                        label="Adenovirus 2"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={
+                              this.props.pet.vaccinations.vaccinationsGiven
+                                .parvovirus
+                            }
+                          />
+                        }
+                        label="Parvo Virus"
+                      />
+                    </FormGroup>
+                    <FormGroup row>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={
+                              this.props.pet.vaccinations.vaccinationsGiven
+                                .leptospira
+                            }
+                          />
+                        }
+                        label="Leptospira"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={
+                              this.props.pet.vaccinations.vaccinationsGiven
+                                .coronavirus
+                            }
+                          />
+                        }
+                        label="CoronaVirus"
+                      />
+                    </FormGroup>
+                    <FormGroup row>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={
+                              this.props.pet.vaccinations.vaccinationsGiven
+                                .bordetella
+                            }
+                          />
+                        }
+                        label="Bordetella"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={
+                              this.props.pet.vaccinations.vaccinationsGiven
+                                .giardiasis
+                            }
+                          />
+                        }
+                        label="Giardiasis"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={
+                              this.props.pet.vaccinations.vaccinationsGiven
+                                .rabies
+                            }
+                          />
+                        }
+                        label="Rabies"
+                      />
+                    </FormGroup>
+                  </Else>
+                </If>
               </CardContent>
               <CardActions>
                 <Button size="small" color="primary">

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PetListItem from '../../components/PetListItem'
-import OwnerBioListItem from '../../components/OwnerBio'
+//import OwnerBioListItem from '../../components/OwnerBio'
 import MenuAppBar from '../../components/MenuAppBar'
 //import { getPet, deletePet } from '../../action-creators/pets'
 import { getPet } from '../../action-creators/pets'
@@ -10,12 +10,12 @@ import { getPerson } from '../../action-creators/owners'
 import Paper from 'material-ui/Paper'
 //import Typography from 'material-ui/Typography'
 import { withStyles } from 'material-ui/styles'
-import TextField from 'material-ui/TextField'
+//import TextField from 'material-ui/TextField'
 import Button from 'material-ui/Button'
 import PropTypes from 'prop-types'
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card'
 import Typography from 'material-ui/Typography'
-import Divider from 'material-ui/Divider'
+//import Divider from 'material-ui/Divider'
 //import { Link } from 'react-router-dom'
 // import Dialog, {
 //   DialogActions,
@@ -67,23 +67,16 @@ class VaccShow extends React.Component {
         />
         <div style={{ marginTop: '25px' }}>
           <Paper className={classes.root} elevation={2}>
-            <PetListItem pet={props.pet} />
-
             <Card className={classes.card}>
-              <CardMedia
-                className={classes.media}
-                image="/jr-dog.png"
-                title="Puppy Dog"
-              />
               <CardContent>
                 <Typography gutterBottom variant="subheading" component="h4">
                   Medical and Surgical history
                 </Typography>
                 <Typography className={classes.title} color="textSecondary">
-                  name
+                  date: {this.props.pet.surgicalHistory[0].date}
                 </Typography>
                 <Typography gutterBottom variant="body2" component="h5">
-                  {this.props.person.firstName} {this.props.person.lastName}
+                  comments: {this.props.pet.surgicalHistory[0].comments}
                 </Typography>
               </CardContent>
               <CardActions>

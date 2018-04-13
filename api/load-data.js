@@ -178,12 +178,25 @@ db.bulkDocs([
     role: 'owner',
     firstName: 'Charlie',
     lastName: 'Brown',
-    street: '1 Pinetree Corners',
+    street: 'Pinetree Corners',
     city: 'St. Paul',
     state: 'MN',
     zipCode: '55111',
-    phone: '843-351-9847',
+    phone: '612-351-9847',
     email: 'CBrown@gmail.com'
+  },
+  {
+    _id: 'person_owner_arbuckel-jon',
+    type: 'person',
+    role: 'owner',
+    firstName: 'Jon',
+    lastName: 'Arbuckel',
+    street: '202 South Beacon St.',
+    city: 'Muncie',
+    state: 'IN',
+    zipCode: '47303',
+    phone: '765-728-1978',
+    email: 'jar@gmail.com'
   },
   {
     _id: 'person_owner_rogers-shaggy-norville',
@@ -191,11 +204,11 @@ db.bulkDocs([
     role: 'owner',
     firstName: 'Norville Shaggy',
     lastName: 'Rogers',
-    street: 'always on the move...',
-    city: '',
-    state: '',
-    zipCode: '',
-    phone: '800-478-3219',
+    street: '105 Spring St.',
+    city: 'Coolville',
+    state: 'Ohio',
+    zipCode: '45723',
+    phone: '740-478-3219',
     email: 'Shaggy@gmail.com'
   },
   {
@@ -205,10 +218,10 @@ db.bulkDocs([
     firstName: 'Granny Emma',
     lastName: 'Webster',
     street: 'Grannys Mansion',
-    city: '',
-    state: '',
-    zipCode: '',
-    phone: '',
+    city: 'Chicago',
+    state: 'IL',
+    zipCode: '60614',
+    phone: '312-112-5341',
     email: 'Grannys@gmail.com'
   },
   {
@@ -240,23 +253,40 @@ db.bulkDocs([
     },
     labTests: [
       {
-        date: '',
-        type: '',
-        result: '',
-        injection: '',
-        coments: ''
+        date: '2018-02-14',
+        type: 'WBC',
+        result: '2.3',
+        comments: 'LOW'
+      },
+      {
+        date: '2018-02-14',
+        type: 'RBC',
+        result: '5.1',
+        comments: '-'
+      },
+      {
+        date: '2018-02-14',
+        type: 'HGB',
+        result: '11.0',
+        comments: 'LOW'
+      },
+      {
+        date: '2018-02-14',
+        type: 'HCT',
+        result: '35',
+        comments: 'LOW'
       }
     ],
     surgicalHistory: [
       {
-        date: '',
-        comments: ''
+        date: '1976-01-27',
+        comments: 'Bladder stones.'
       }
     ],
     rabiesTag: {
-      date: '',
-      tagNumber: '',
-      comments: ''
+      date: '2017-12-02',
+      tagNumber: '077010',
+      comments: 'Snoopy'
     }
   },
   {
@@ -267,9 +297,9 @@ db.bulkDocs([
     ownerID: 'person_owner_rogers-shaggy-norville',
     dateOfBirth: '1969-04-16',
     breed: 'Great Dane',
-    markings: '',
+    markings: 'Several distinctive black spots on his upper body.',
     gender: 'male',
-    breeder: 'unknown',
+    breeder: 'Knittingham Puppy Farm',
     dateAquired: '1969-07-03',
     vaccinations: {
       vaccinationDate: '1969-09-17',
@@ -288,23 +318,40 @@ db.bulkDocs([
     },
     labTests: [
       {
-        date: '',
-        type: '',
-        result: '',
-        injection: '',
-        coments: ''
+        date: '2018-04-01',
+        type: 'WBC',
+        result: '12.8',
+        comments: 'HIGH'
+      },
+      {
+        date: '2018-04-01',
+        type: 'RBC',
+        result: '6.0',
+        comments: '-'
+      },
+      {
+        date: '2018-04-01',
+        type: 'HGB',
+        result: '17.3',
+        comments: 'HIGH'
+      },
+      {
+        date: '2018-04-01',
+        type: 'HCT',
+        result: '45',
+        comments: '-'
       }
     ],
     surgicalHistory: [
       {
-        date: '',
-        comments: ''
+        date: '1974-12-04',
+        comments: 'Intestinal obstruction from a foreign body.'
       }
     ],
     rabiesTag: {
-      date: '',
-      tagNumber: '',
-      comments: ''
+      date: '2016-08-21',
+      tagNumber: '529501',
+      comments: 'Scooby'
     }
   },
   {
@@ -334,23 +381,40 @@ db.bulkDocs([
     },
     labTests: [
       {
-        date: '',
-        type: '',
-        result: '',
-        injection: '',
-        coments: ''
+        date: '2017-11-15',
+        type: 'WBC',
+        result: '9.3',
+        comments: '-'
+      },
+      {
+        date: '2017-11-15',
+        type: 'RBC',
+        result: '5.5',
+        comments: '-'
+      },
+      {
+        date: '2017-11-15',
+        type: 'HGB',
+        result: '15.3',
+        comments: '-'
+      },
+      {
+        date: '2017-11-15',
+        type: 'HCT',
+        result: '43',
+        comments: '-'
       }
     ],
     surgicalHistory: [
       {
-        date: '',
-        comments: ''
+        date: '1997-10-31',
+        comments: 'ACL rupture.'
       }
     ],
     rabiesTag: {
-      date: '',
-      tagNumber: '',
-      comments: ''
+      date: '2017-05-13',
+      tagNumber: '644301',
+      comments: 'Garfield'
     }
   },
   {
@@ -380,23 +444,40 @@ db.bulkDocs([
     },
     labTests: [
       {
-        date: '',
-        type: '',
-        result: '',
-        injection: '',
-        coments: ''
+        date: '2018-03-26',
+        type: 'WBC',
+        result: '14.1',
+        comments: 'HIGH'
+      },
+      {
+        date: '2018-03-26',
+        type: 'RBC',
+        result: '5.3',
+        comments: '-'
+      },
+      {
+        date: '2018-03-26',
+        type: 'HGB',
+        result: '12.5',
+        comments: 'LOW'
+      },
+      {
+        date: '2018-03-26',
+        type: 'HCT',
+        result: '37',
+        comments: 'LOW'
       }
     ],
     surgicalHistory: [
       {
-        date: '',
-        comments: ''
+        date: '1965-05-01',
+        comments: 'Torn cruciate.'
       }
     ],
     rabiesTag: {
-      date: '',
-      tagNumber: '',
-      comments: ''
+      date: '2018-02-25',
+      tagNumber: '812945',
+      comments: 'Sylvester'
     }
   }
 ])

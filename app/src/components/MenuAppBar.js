@@ -25,6 +25,9 @@ const styles = theme => ({
   lastButton: {
     marginLeft: 12,
     marginRight: -12
+  },
+  cleaned: {
+    textDecoration: 'none'
   }
 })
 

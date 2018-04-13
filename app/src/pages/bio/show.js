@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PetListItem from '../../components/PetListItem'
-import OwnerBioListItem from '../../components/OwnerBio'
+//import OwnerBioListItem from '../../components/OwnerBio'
 import MenuAppBar from '../../components/MenuAppBar'
 //import { getPet, deletePet } from '../../action-creators/pets'
 import { getPet } from '../../action-creators/pets'
@@ -10,7 +10,7 @@ import { getPerson } from '../../action-creators/owners'
 import Paper from 'material-ui/Paper'
 //import Typography from 'material-ui/Typography'
 import { withStyles } from 'material-ui/styles'
-import TextField from 'material-ui/TextField'
+//import TextField from 'material-ui/TextField'
 import Button from 'material-ui/Button'
 import PropTypes from 'prop-types'
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card'
@@ -40,8 +40,8 @@ class BioShow extends React.Component {
   componentDidMount() {
     const id = this.props.match.params.id
     this.props.getPet(id)
-    const ownerId = this.props.pet.ownerID
-    this.props.getPerson(ownerId)
+    // const ownerId = this.props.pet.ownerID
+    // this.props.getPerson(ownerId)
 
     console.log('BIO-Show componentDidMount id:', id)
     console.log('BIO-Show componentDidMount this.props:', this.props)

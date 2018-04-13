@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PetListItem from '../../components/PetListItem'
-import OwnerBioListItem from '../../components/OwnerBio'
+import LabListItem from '../../components/LabListItem'
+//import OwnerBioListItem from '../../components/OwnerBio'
 import MenuAppBar from '../../components/MenuAppBar'
 //import { getPet, deletePet } from '../../action-creators/pets'
 import { getPet } from '../../action-creators/pets'
@@ -10,11 +11,13 @@ import { getPerson } from '../../action-creators/owners'
 import Paper from 'material-ui/Paper'
 //import Typography from 'material-ui/Typography'
 import { withStyles } from 'material-ui/styles'
-import TextField from 'material-ui/TextField'
+//import TextField from 'material-ui/TextField'
 import Button from 'material-ui/Button'
 import PropTypes from 'prop-types'
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card'
 import Typography from 'material-ui/Typography'
+import { map } from 'ramda'
+import List from 'material-ui/List'
 import Divider from 'material-ui/Divider'
 //import { Link } from 'react-router-dom'
 // import Dialog, {
@@ -36,15 +39,15 @@ const styles = theme => ({
   }
 })
 
-class VaccShow extends React.Component {
+class LabShow extends React.Component {
   componentDidMount() {
     const id = this.props.match.params.id
     this.props.getPet(id)
     const ownerId = this.props.pet.ownerID
     this.props.getPerson(ownerId)
 
-    console.log('VACC-Show componentDidMount id:', id)
-    console.log('VACC-Show componentDidMount this.props:', this.props)
+    console.log('LAB-Show componentDidMount id:', id)
+    console.log('LAB-Show componentDidMount this.props:', this.props)
     //    const ownerID = this.props.pet.ownerID
     //    this.props.getPerson(this.props.pet.ownerID)
   }
@@ -52,8 +55,8 @@ class VaccShow extends React.Component {
   render() {
     const props = this.props
     const { classes } = props
-    console.log('BIO-Show before Loading Pet Info PROPS:', props)
-    console.log('BIO-Show before Loading Pet Info CLASSES:', classes)
+    console.log('LAB-Show before Loading Pet Info PROPS:', props)
+    console.log('LAB-Show before Loading Pet Info CLASSES:', classes)
     if (props.pet._id !== props.match.params.id) {
       return <h3>Loading Lab Tests ...</h3>
     }
@@ -64,23 +67,63 @@ class VaccShow extends React.Component {
         <div style={{ marginTop: '25px' }}>
           <Paper className={classes.root} elevation={2}>
             <PetListItem pet={props.pet} />
-
             <Card className={classes.card}>
-              <CardMedia
-                className={classes.media}
-                image="/jr-dog.png"
-                title="Puppy Dog"
-              />
               <CardContent>
                 <Typography gutterBottom variant="subheading" component="h4">
-                  Laboratory Tests
+                  Complete Blood Count - CBC
                 </Typography>
                 <Typography className={classes.title} color="textSecondary">
-                  name
+                  Type: {this.props.pet.labTests[0].type}
+                </Typography>
+                <Typography className={classes.title} color="textSecondary">
+                  Date: {this.props.pet.labTests[0].date}
+                </Typography>
+                <Typography variant="body2" component="h5">
+                  Result: {this.props.pet.labTests[0].result}
                 </Typography>
                 <Typography gutterBottom variant="body2" component="h5">
-                  {this.props.person.firstName} {this.props.person.lastName}
+                  Comments:{this.props.pet.labTests[0].comments}
                 </Typography>
+                <Divider />
+                <Typography className={classes.title} color="textSecondary">
+                  Type: {this.props.pet.labTests[1].type}
+                </Typography>
+                <Typography className={classes.title} color="textSecondary">
+                  Date: {this.props.pet.labTests[1].date}
+                </Typography>
+                <Typography variant="body2" component="h5">
+                  Result: {this.props.pet.labTests[1].result}
+                </Typography>
+                <Typography gutterBottom variant="body2" component="h5">
+                  Comments:{this.props.pet.labTests[1].comments}
+                </Typography>
+                <Divider />
+                <Typography className={classes.title} color="textSecondary">
+                  Type: {this.props.pet.labTests[2].type}
+                </Typography>
+                <Typography className={classes.title} color="textSecondary">
+                  Date: {this.props.pet.labTests[2].date}
+                </Typography>
+                <Typography variant="body2" component="h5">
+                  Result: {this.props.pet.labTests[2].result}
+                </Typography>
+                <Typography gutterBottom variant="body2" component="h5">
+                  Comments:{this.props.pet.labTests[2].comments}
+                </Typography>
+                <Divider />
+                <Typography className={classes.title} color="textSecondary">
+                  Type: {this.props.pet.labTests[3].type}
+                </Typography>
+                <Typography className={classes.title} color="textSecondary">
+                  Date: {this.props.pet.labTests[3].date}
+                </Typography>
+                <Typography variant="body2" component="h5">
+                  Result: {this.props.pet.labTests[3].result}
+                </Typography>
+                <Typography gutterBottom variant="body2" component="h5">
+                  Comments:{this.props.pet.labTests[3].comments}
+                </Typography>
+                <Divider />
               </CardContent>
               <CardActions>
                 <Button size="small" color="primary">
@@ -95,7 +138,7 @@ class VaccShow extends React.Component {
   }
 }
 
-VaccShow.propTypes = {
+LabShow.propTypes = {
   classes: PropTypes.object.isRequired
 }
 
@@ -118,9 +161,19 @@ const mapActionsToProps = dispatch => {
 
 const connector = connect(mapStateToProps, mapActionsToProps)
 
-export default connector(withStyles(styles)(VaccShow))
+export default connector(withStyles(styles)(LabShow))
 
 /*
+
+            <LabListItem test={props.pet.labTests} />
+
+<List>
+  {map(r => <LabListItem test={r} />, props.pet.labTests)}
+</List>
+
+
+
+
 This is the definition of the Edit and Delete Buttons that were on line 57
 
 <Link
